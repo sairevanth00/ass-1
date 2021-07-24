@@ -1,5 +1,5 @@
 
-//-------------------------------------API-1--------------------------------------------
+//-------------------------------API-1-----------------------------------
 ###
 //scenario-1
 GET http://localhost:3000/todos/?status=TO%20DO
@@ -28,6 +28,74 @@ GET http://localhost:3000/todos/?category=HOME
 //scenario-7
 GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
 
-#---------------------------API-2--------------------------------------
+#---------------------------------API-2----------------------------------
 ###
-GET http://localhost:3000/todos/1/
+GET http://localhost:3000/todos/2/
+#---------------------------------API-3----------------------------------
+
+###
+GET http://localhost:3000/agenda/?due_date=2021-02-22
+
+
+#--------------------------------API-4-----------------------------------
+
+###
+POST http://localhost:3000/todos/ 
+
+{
+  "id": 6,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-02-22"
+}
+
+#--------------------------------API-5-----------------------------------
+
+###
+//scenario-1
+PUT http://localhost:3000/todos/2/ 
+
+{
+  "status": "DONE"
+}
+
+###
+//scenario-2
+PUT http://localhost:3000/todos/2/ 
+
+{
+  "priority": "HIGH"
+}
+
+###
+//scenario-3
+PUT http://localhost:3000/todos/2/ 
+
+{
+  "todo": "Clean the garden"
+}
+
+###
+//scenario-4
+PUT http://localhost:3000/todos/2/ 
+
+{
+  "category": "LEARNING"
+}
+###
+//scenario-5
+PUT http://localhost:3000/todos/2/ 
+
+{
+  "dueDate": "2021-01-12"
+}
+//-------------------------------API-6------------------------------------
+###
+
+DELETE http://localhost:3000/todos/1/ 
+
+//ALL TODOS IN DATA BASE-------------------------------------------------
+###
+GET http://localhost:3000/todos/ 
